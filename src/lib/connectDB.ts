@@ -1,8 +1,8 @@
 import mongoose from "mongoose"
+import dotenv from "dotenv"
 
-const mongoDBUrl =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://Beeynow20007:beeynow2007@cluster0.g4l5dsr.mongodb.net/Multicart"
+const mongoDBUrl = "mongodb://127.0.0.1:27017/myDatabase"
+
 
 if (!mongoDBUrl) throw new Error("DB error: MongoDB URI missing")
 
@@ -33,8 +33,8 @@ const connectDb = async (): Promise<mongoose.Connection> => {
   }
 
   try {
-    cached.conn = await cached.promise
-    return cached.conn
+    const conn = await cached.promise
+    return conn
   } catch (error) {
     cached.promise = null
     console.error("❌ MongoDB connection error:", error)

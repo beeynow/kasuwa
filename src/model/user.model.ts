@@ -1,8 +1,6 @@
  import mongoose from "mongoose";
-import { unique } from "next/dist/build/utils";
 
-
- interface IUser{
+export interface IUser{
     id?:mongoose.Types.ObjectId;
 
     name:string;
