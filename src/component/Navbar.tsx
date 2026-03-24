@@ -28,7 +28,7 @@ function Navbar({user}:{user:IUser}) {
   const [openMenu, setOpenMenu] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   return (
-    <div className='fixed top-0 px-15 w-full bg-black text-white z-50 sha'>
+    <div className='fixed top-0 px-2 w-full bg-black text-white z-50 sha'>
       <div className='max--w-7xl mx-auto px-6 py-3 flex justify-between items-center'>
         {/* logo */}
         <div className='flex items-center gap-2 cursor-pointer' onClick={()=>router.push("/public")}>
@@ -38,7 +38,7 @@ function Navbar({user}:{user:IUser}) {
         </div>
          {user?.role == 'user' && <div className='hidden md:flex gap-8'>
             <NavItem label="Home" path="/" router={router}/>
-            <NavItem label="Categories" path="/categories" router={router}/>          
+            <NavItem label="Categories" path="/category" router={router}/>          
             <NavItem label="Shop" path="/shop" router={router}/>
             <NavItem label="Order" path="/order" router={router}/>
 
